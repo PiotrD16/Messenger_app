@@ -1,0 +1,114 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content {
+    background-color: #112d4e;
+    color: #e0e7ff;
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid #1b3a57;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal-content h3 {
+    margin: 0 0 1rem 0;
+    color: #f5e3e3;
+    font-size: 1.5rem;
+}
+
+.modal-content p {
+    color: #8da2fb;
+    font-size: 0.95rem;
+    margin: 0 0 1.5rem 0;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    background-color: #0d1b2a;
+    border: 1px solid #3d5a80;
+    border-radius: 10px;
+    color: white;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: all 0.2s;
+}
+
+.modal-content input:focus {
+    outline: none;
+    border-color: #4eaaff;
+    box-shadow: 0 0 0 3px rgba(78, 170, 255, 0.25);
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.btn-cancel, .btn-confirm {
+    flex: 1;
+    padding: 0.8rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    transform: none;
+}
+
+.btn-cancel {
+    background: transparent;
+    border: 2px solid #cf6679;
+    color: #cf6679;
+}
+
+.btn-cancel:hover {
+    background-color: rgba(207, 102, 121, 0.15);
+}
+
+.btn-confirm {
+    background: linear-gradient(135deg, #3d5a80, #1e81b0);
+    color: white;
+}
+
+.btn-confirm:hover {
+    background: linear-gradient(135deg, #1e81b0, #3d5a80);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(30, 129, 176, 0.4);
+}
+
+@keyframes popIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
